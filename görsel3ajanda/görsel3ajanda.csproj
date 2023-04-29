@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.Common.112.3.0\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.112.3.0\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\cef.redist.x86.112.3.0\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.112.3.0\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.112.3.0\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.112.3.0\build\cef.redist.x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2532D8D2-65FE-402D-AD1B-744B4CB69E2A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>görsel3ajanda</RootNamespace>
+    <AssemblyName>görsel3ajanda</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp, Version=112.3.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.112.3.0\lib\net452\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=112.3.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.112.3.0\lib\net452\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms, Version=112.3.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.WinForms.112.3.0\lib\net462\CefSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="EO.Base, Version=23.1.77.0, Culture=neutral, PublicKeyToken=e92353a6bf73fffc, processorArchitecture=MSIL">
+      <HintPath>..\packages\EO.WebBrowser.23.1.77\lib\EO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="EO.WebBrowser, Version=23.1.77.0, Culture=neutral, PublicKeyToken=e92353a6bf73fffc, processorArchitecture=MSIL">
+      <HintPath>..\packages\EO.WebBrowser.23.1.77\lib\EO.WebBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="EO.WebEngine, Version=23.1.77.0, Culture=neutral, PublicKeyToken=e92353a6bf73fffc, processorArchitecture=MSIL">
+      <HintPath>..\packages\EO.WebBrowser.23.1.77\lib\EO.WebEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="görsel3vizeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>görsel3vizeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="internetkontrol.cs" />
+    <Compile Include="kullanıcı\kitap\ekitap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\kitap\ekitap.Designer.cs">
+      <DependentUpon>ekitap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\notlar\notdüzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\notlar\notdüzenle.Designer.cs">
+      <DependentUpon>notdüzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\sosyalmedya\facebook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\sosyalmedya\facebook.Designer.cs">
+      <DependentUpon>facebook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\sosyalmedya\instagram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\sosyalmedya\instagram.Designer.cs">
+      <DependentUpon>instagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\sosyalmedya\twitter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\sosyalmedya\twitter.Designer.cs">
+      <DependentUpon>twitter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\takvim\aktivite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\takvim\aktivite.Designer.cs">
+      <DependentUpon>aktivite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\arastirma\arastirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\arastirma\arastirma.Designer.cs">
+      <DependentUpon>arastirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\bilgiler\kllncdüzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\bilgiler\kllncdüzenle.Designer.cs">
+      <DependentUpon>kllncdüzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\giris\kllncgrs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\giris\kllncgrs.Designer.cs">
+      <DependentUpon>kllncgrs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\kllncsayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\kllncsayfa.Designer.cs">
+      <DependentUpon>kllncsayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\giris\klnccekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\giris\klnccekle.Designer.cs">
+      <DependentUpon>klnccekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\notlar\notbak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\notlar\notbak.Designer.cs">
+      <DependentUpon>notbak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\notlar\notekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\notlar\notekle.Designer.cs">
+      <DependentUpon>notekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\notlar\not.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\notlar\not.Designer.cs">
+      <DependentUpon>not.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\notlar\notsil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\notlar\notsil.Designer.cs">
+      <DependentUpon>notsil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\sosyalmedya\sosyal_medya.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\sosyalmedya\sosyal_medya.Designer.cs">
+      <DependentUpon>sosyal_medya.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\takvim\takvim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\takvim\takvim.Designer.cs">
+      <DependentUpon>takvim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\takvim\UserControlBlank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\takvim\UserControlBlank.Designer.cs">
+      <DependentUpon>UserControlBlank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanıcı\takvim\UserControlDays.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="kullanıcı\takvim\UserControlDays.Designer.cs">
+      <DependentUpon>UserControlDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sqlbaglantisi.cs" />
+    <Compile Include="yönetici\kullanıcılar\kllncdüzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yönetici\kullanıcılar\kllncdüzenle.Designer.cs">
+      <DependentUpon>kllncdüzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yönetici\kullanıcılar\kllnclar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yönetici\kullanıcılar\kllnclar.Designer.cs">
+      <DependentUpon>kllnclar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yönetici\kullanıcılar\kllncsil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yönetici\kullanıcılar\kllncsil.Designer.cs">
+      <DependentUpon>kllncsil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yönetici\kullanıcıekle\klnccekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yönetici\kullanıcıekle\klnccekle.Designer.cs">
+      <DependentUpon>klnccekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yönetici\yöneticigiris\yntcgrs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yönetici\yöneticigiris\yntcgrs.Designer.cs">
+      <DependentUpon>yntcgrs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yönetici\yntcsayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="yönetici\yntcsayfa.Designer.cs">
+      <DependentUpon>yntcsayfa.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\kitap\ekitap.resx">
+      <DependentUpon>ekitap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\notlar\notdüzenle.resx">
+      <DependentUpon>notdüzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\sosyalmedya\facebook.resx">
+      <DependentUpon>facebook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\sosyalmedya\instagram.resx">
+      <DependentUpon>instagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\sosyalmedya\twitter.resx">
+      <DependentUpon>twitter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\takvim\aktivite.resx">
+      <DependentUpon>aktivite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\arastirma\arastirma.resx">
+      <DependentUpon>arastirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\bilgiler\kllncdüzenle.resx">
+      <DependentUpon>kllncdüzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\giris\kllncgrs.resx">
+      <DependentUpon>kllncgrs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\kllncsayfa.resx">
+      <DependentUpon>kllncsayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\giris\klnccekle.resx">
+      <DependentUpon>klnccekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\notlar\notbak.resx">
+      <DependentUpon>notbak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\notlar\notekle.resx">
+      <DependentUpon>notekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\notlar\not.resx">
+      <DependentUpon>not.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\notlar\notsil.resx">
+      <DependentUpon>notsil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\sosyalmedya\sosyal_medya.resx">
+      <DependentUpon>sosyal_medya.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\takvim\takvim.resx">
+      <DependentUpon>takvim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\takvim\UserControlBlank.resx">
+      <DependentUpon>UserControlBlank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanıcı\takvim\UserControlDays.resx">
+      <DependentUpon>UserControlDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="yönetici\kullanıcılar\kllncdüzenle.resx">
+      <DependentUpon>kllncdüzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yönetici\kullanıcılar\kllnclar.resx">
+      <DependentUpon>kllnclar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yönetici\kullanıcılar\kllncsil.resx">
+      <DependentUpon>kllncsil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yönetici\kullanıcıekle\klnccekle.resx">
+      <DependentUpon>klnccekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yönetici\yöneticigiris\yntcgrs.resx">
+      <DependentUpon>yntcgrs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="yönetici\yntcsayfa.resx">
+      <DependentUpon>yntcsayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="görsel3vizeDataSet.xsc">
+      <DependentUpon>görsel3vizeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="görsel3vizeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>görsel3vizeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="görsel3vizeDataSet.xss">
+      <DependentUpon>görsel3vizeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adres.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ayar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ayarlar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bekle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bekle1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bekle16.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bekle24.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bilgi32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carpi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carpi25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carpi32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_64px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_64px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dizin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dosya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duzenle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ekle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\external_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geriyukle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graphix-internet-explorer_282x282.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_male_user_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_male_user_481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_secure_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iletisim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kategori.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kullanici.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KURT TECHV1.0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male_user_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male_user_100px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male_user_100px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muster-bilgi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musteri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musteri1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musteri2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musteri3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musteri-duzenle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musteri-ekle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musteri-kategori.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musteri-sil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Places-certificate-server-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rapor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rapor-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rapor-g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\raporh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sales.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satis1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satis-e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satis-m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sifre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Student Registration_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student_male_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\takip-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teknik1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teknik-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teknik-b1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teknik-e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teknik-e1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teknik-g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telefon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tik25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tik32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\urun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\urun-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\urun-b1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\urun-b2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\urun-e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\urun-g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\urun-k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\urun-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whatsapp_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yenile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yukle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand_with_pen_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hard_working_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instagram_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instagram_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instagram_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitter_96px.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\cef.redist.x64.112.3.0\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.112.3.0\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.112.3.0\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.112.3.0\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.112.3.0\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.112.3.0\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.112.3.0\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.112.3.0\build\CefSharp.Common.targets'))" />
+  </Target>
+  <Import Project="..\packages\CefSharp.Common.112.3.0\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.112.3.0\build\CefSharp.Common.targets')" />
+</Project>
